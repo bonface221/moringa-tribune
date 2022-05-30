@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse sticky-top navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="{% url 'newsToday' %}" class="navbar-brand">
+                The Moringa Tribune
+            </a>
+        </div>
+        <!-- adding a search form -->
+        <div class="col-sm-4 col-md-4 navbar-right">
+            <form action="{% url 'search_results' %}" role='search' class="navbar-form">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Article" name="articles">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- search form end -->
+    </div>
+</nav>
+

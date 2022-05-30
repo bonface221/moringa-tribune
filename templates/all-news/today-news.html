@@ -1,0 +1,27 @@
+{% extends 'all-news/base.html'%} {% block content %} {{block.super}}
+<div class="container mb-4">
+	<!-- looping through news -->
+	{% for news_item in news reversed %}
+	<div class="row mt-3 border p-3">
+		<!-- displaying News articles -->
+		<!-- Display news Articles images -->
+		<div class="col-md-12 col-sm-12 col-lg-12">
+			<h2 class="text-center">{{ news_item.title }}</h2>
+			<img
+				src="{{news_item.article_image.url}}"
+				class="img-fluid"
+				alt="Image"
+			/>
+		</div>
+		<div class="col-md-12 mt-2 text-center">
+			<p>{{ news_item.post }}</p>	
+            <p><a href="article/{{news_item.id}}">Read more</a></p>
+		</div>
+	</div>
+	{% empty %}
+	<div class="row">
+		<h2 class="text-center">There are No News</h2>
+	</div>
+	{% endfor%}
+</div>
+{% endblock %}
